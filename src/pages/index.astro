@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro'
+import AboutMe from '../components/Aboutme.astro'
+import Badge from '../components/Badge.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+import Socialpill from "../components/Socialpill.astro"
+import Linkedin from "../components/icons/Linkedin.astro"
+import Github from '../components/icons/Github.astro'
+import Mail from '../components/icons/Mail.astro'
+import Experience from '../components/Experience.astro'
+import Briefcase from '../components/icons/Briefcase.astro'
+import CodeIcon from '../components/icons/CodeIcon.astro'
+import Projects from '../components/Projects.astro'
+import ProfileCheck from '../components/icons/Profilecheck.astro'
+
+---
+
+<Layout title="Giovanni's Portfolio | Web Developer" description=''>
+	<main class="px-4">
+	<SectionContainer id="home" class="py-16 pb-36">
+		<main class="px-4">
+			<img class="rounded-full size-16 mb-4" src="https://pbs.twimg.com/media/Eii-bCQWAAUZf8j?format=jpg&name=large" alt="midudev photo"/>
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hey, I'm Giovanni 
+				<a href="https://www.linkedin.com/in/giovanni-alberto-salas-atondo-9a5a25247/" target="_blank" rel="noopener" class="flex justify-center items-center">
+					<Badge>Available for hire</Badge>
+				</a>
+			</h1>
+			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+				+1 year of experience. Web Developer. From Sonora, Mexico.
+				<br>
+				Diligent and enthusiastic candidate, dedicated to continuous learning
+				and embracing new challenges daily. 
+			</h2>
+
+			<ul>
+				<nav class="flex gap-4 mt-8 flex-wrap">
+					<Socialpill  href="https://www.linkedin.com/in/giovanni-alberto-salas-atondo-9a5a25247/">
+						<Linkedin class="size-4 lg:size-6"/>
+						LinkedIn
+					</Socialpill>
+					<Socialpill  href="https://github.com/GioAtondo">
+						<Github class="size-4 lg:size-6"/>
+						GitHub
+					</Socialpill>
+					<Socialpill  href="mailto:gioatondo7@gmail.com">
+						<Mail class="size-4 lg:size-6"/>
+						gioatondo7@gmail.com
+					</Socialpill>
+				</nav>
+			</ul>
+		</main>
+	</SectionContainer>
+	<div class="space-y-24">
+	<SectionContainer id="experience">
+		<h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-white">
+			<Briefcase class="size-7"/>
+			Experience
+		</h2>
+		<Experience />
+	</SectionContainer>
+	<SectionContainer id="projects">
+		<h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-white">
+			<CodeIcon class="size-7"/>
+			Projects
+		</h2>
+		<Projects />
+	</SectionContainer>
+	<SectionContainer id="about">
+		<h2
+		  class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-white"
+		>
+		  <ProfileCheck class="size-8" />
+		  About me
+		</h2>
+		<AboutMe />
+	  </SectionContainer>
+	</main>
+</Layout>
+

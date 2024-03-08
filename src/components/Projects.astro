@@ -1,0 +1,108 @@
+---
+import GitHub from '../components/icons/Github.astro'
+import Link from '../components/icons/Link.astro'
+import Tailwind from '../components/icons/Tailwind.astro';
+import HtmlIcon from '../components/icons/HtmlIcon.astro';
+import CSS from '../components/icons/CSS.astro';
+import Javascript from '../components/icons/JavascriptIcon.astro';
+import PHP from '../components/icons/PHPicon.astro';
+import LinkButton from '../components/LinkButton.astro';
+
+const TAGS = {
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: Tailwind,
+    },
+    HTML: {
+        name: 'HTML',
+        class: 'bg-[#FE9071] text-white',
+        icon: HtmlIcon,
+    },
+    CSS: {
+        name: 'CSS',
+        class: 'bg-[#75B3D8] text-white',
+        icon: CSS
+    },
+    JS: {
+        name: 'JS',
+        class: 'bg-[#F8E75E] text-white',
+        icon: Javascript
+    },
+    PHP: {
+        name: 'PHP',
+        class: 'bg-[#6181B6] text-white',
+        icon: PHP
+    }
+}
+
+const PROJECTS = [
+    {
+        title: 'Mi empleo Araiza',
+        description: 'Contribution to the MiEmpleo Araiza website, which serves as a platform for job seekers within the 5 Araiza hotels. The website features both user and administrator interfaces to facilitate the management of job applications and maintain oversight over vacancies. This project was developed entirely using vanilla HTML, CSS, JavaScript, and PHP.',
+        link: 'https://miempleoaraiza.com',
+        github: '',
+        image: '/projects/miempleoaraiza.webp',
+        tags: [TAGS.HTML,TAGS.CSS,TAGS.JS,TAGS.PHP],
+    },
+    {
+        title: 'Daydream Pedals',
+        description: ' Established and launched Daydream Pedals, a personal project where I design, manufacture, and sell guitar pedals as both a hobby and a business venture. Initiated by researching pedal functionality and employing reverse engineering techniques to enhance existing pedal designs. Currently, I specialize in PCB design, soldering, drilling, and painting to create unique pedals. Successfully marketed numerous pedals to local bands, demonstrating a passion for electronics repair and pedal creation',
+        link: 'https://www.instagram.com/daydreampedals/',
+        github: '',
+        image: '/projects/daydream.webp',
+        tags: [],
+    }
+]
+---
+<div class="flex flex-col gap-y-16">
+{
+    
+    PROJECTS.map(({ title, description, tags, image, github, link}) => (
+        
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+            <div class="w-full md:w-1/2">
+                <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:max-w-lg">
+                <h3 class="text-2xl font-semibold text-green-200 mb-2">
+                    {title}
+                </h3>
+                <div class="flex flex-wrap mt-2">
+                    <ul class="flex flex-row mb-2 gap-x-2">
+                        {tags.map((tag) => (
+                            <li>
+                            <span
+                                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                            >
+                                <tag.icon class="size-4" />
+                                {tag.name}
+                            </span>
+                            </li>
+                        ))}
+                    </ul>
+                    <div class="mt-2 text-gray-300">{description}</div>
+                </div>
+            
+                <footer class="flex items-end justify-start mt-4 gap-x-4">
+                    {github && (
+                        <LinkButton href={github}>
+                        <GitHub class="size-6" />
+                        Code
+                        
+                        </LinkButton>
+                    )}
+                    {link && (
+                        <LinkButton href={link}>
+                        <Link class="size-4" />
+                        Preview
+                        </LinkButton>
+                    )}
+                    </footer>
+                </div>          
+        </article>
+    ))
+}
+</div>

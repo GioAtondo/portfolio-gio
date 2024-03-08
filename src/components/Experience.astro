@@ -1,0 +1,32 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: 'March 2023 - Present',
+        title: 'Araiza Hotels - Web developer',
+        description: 'Developed websites for product and business administration at Araiza Hotels, overseeing all aspects from project management to database design. Managed multiple projects concurrently, adeptly handling error resolution while working on other tasks.',
+        description_2: 'Contributed to the creation of a comprehensive survey platform for all restaurants across different hotels, aimed at enhancing the overall client experience. Implemented surveys linked to an admin page for data visualization.',
+        description_3: 'Collaborated on the development of a job-seeking platform for all five hotels, enabling administrators to post job listings with detailed descriptions and required skills. Users are required to create an account and provide relevant data to access job listings. Admins have the ability to review applications and communicate with candidates via preformatted emails.',
+        description_4: ' Currently expanding skills in Laravel to facilitate the migration of existing pages to a framework, aiming to streamline overall management and control',
+        company: 'Araiza Hotels'
+    },
+    {
+        date: 'August 2022 - December 2022',
+        title: 'Global Mechanical - iOS developer',
+        description: 'Participated creating UI components to enhance user experience within a project administration application, focusing on managing project costs, timelines, and remaining time allocations.',
+        company: 'Global Mechanical'
+        
+    }
+]
+---
+<ol class="relative mt-16">                  
+    <li class="">
+    {
+        EXPERIENCE.map(experience => (
+            <ExperienceItem {...experience} />
+        ))
+    }
+    </li>
+</ol>
+

@@ -1,0 +1,49 @@
+---
+export interface Props{
+    title: string
+    company: string
+    description: string
+    description_2?: string
+    description_3?: string
+    description_4?: string
+    link?: string
+    date: string
+}
+
+const { title, description, description_2, description_3, description_4, link, date, company } = Astro.props
+---
+
+<div
+  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2  before:white before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
+>
+<div class="relative pb-10 md:col-span-2">
+  <div class="sticky top-0">
+    <span class="text-green-100 -left-[42px] absolute rounded-full text-5xl">
+      &bull;
+    </span>
+    <h3 class="text-xl font-bold text-green-100">{title}</h3>
+    <h4 class="font-semibold text-xl text-white">{company}</h4>
+    <time class="p-0 m-0 text-sm text-white">{date}</time>
+  </div>
+</div>
+<div class="relative flex flex-col gap-2 pb-4 text-gray-300 md:col-span-3">
+  <p>{description}</p>
+
+  {description_2 && (
+  <p>{description_2}</p>
+  )}
+
+  {description_3 && (
+    <p>{description_3}</p>
+    )}
+
+  {description_4 && (
+    <p>{description_4}</p>
+    )}
+
+</div>
+</div>
+
+
+
+

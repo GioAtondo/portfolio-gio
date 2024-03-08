@@ -1,0 +1,40 @@
+---
+const navItems = [
+    {
+        title: "Home",
+        label: "home",
+        url: "/#home"
+    },
+    {
+        title: "Experience",
+        label: "experience",
+        url: "/#experience"
+    },
+    {
+        title: "About",
+        label: "about",
+        url: "/#about"
+    },
+    {
+        title: "Projects",
+        label: "projects",
+        url: "/#projects"
+    },
+    {
+        title: "Contact",
+        label: "contact",
+        url: "mailto:gioatondo7@gmail.com"
+    }
+]
+---
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
+    <nav class="flex px-3 text-sm font-medium rounded-full text-gray-200 justify-center items-center">
+        {
+            navItems.map((link) => (
+                <a class="relative block px-2 py-2 transition hover:text-green-500 " aria-label={link.label} href={link.url}>
+                    {link.title}
+                </a>
+            ))
+        }
+    </nav>
+</header>
